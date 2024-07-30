@@ -10,8 +10,8 @@ Components List:
 -	Bolts
 -	Washer
 -	5x 180 RDS3115mg/DS3115mg Servo Motors
-o	5x 100µF 25v capacitor 
-o	5x 100nf ceramic capacitor 
+  o	5x 100µF 25v capacitor 
+  o	5x 100nf ceramic capacitor 
 -	Arduino Uno R4 Wi-Fi
 -	5x20 PCB Fuse holder
 -	5x20 fuse
