@@ -1,0 +1,1 @@
+This part should be responsible for the each servo involved in the vertical rotation of the arm of the robot, ranging from 0-180 degrees. 
