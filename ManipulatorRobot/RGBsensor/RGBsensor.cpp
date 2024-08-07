@@ -28,26 +28,21 @@ void RGBsensor::RGBsensinit(byte pin) {
   }
 }
 
-void RGBsensor::getVals(int Rval, int Gval, int Bval) {
-  float r, g, b;
-  delay(60);  // takes 50ms to read
-  tcs.getRGB(&r, &g, &b);
-  Rval = int(r); 
-  Gval = int(g); 
-  Bval = int(b);
-}
-
 void RGBsensor::getCol(int Rval, int Gval, int Bval) {
-  switch (getVals()) {
-    case ((Bval > Rval) && (Bval > Gval)): {
-        Serial.print("Blue");
-      }
-    case (Gval > Rval && Gval > Bval): {
-        Serial.print("Green");
-      }
-    case (Rval > Gval && Rval > Bval): {
-        Serial.print("Red");
-      }
+  float red, green, blue;
+  delay(60);  // takes 50ms to read
+  tcs.getRGB(&red, &green, &blue);
+  Rval = int(red); 
+  Gval = int(green); 
+  Bval = int(blue);
+  if (Bval > Rval && Bval > Gval) {
+    Serial.print("Blue");
+  }
+  if (Gval > Rval && Gval > Bval) {
+    Serial.print("Green");
+  }
+  if (Rval > Gval && Rval > Bval) {
+    Serial.print("Red");
   }
 }
 

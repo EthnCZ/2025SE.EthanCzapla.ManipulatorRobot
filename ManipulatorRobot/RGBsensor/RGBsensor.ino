@@ -1,4 +1,3 @@
-
 /*
   Purpose: Basic example of IIC RGB Color Sensor TCS34725
   Notes: 

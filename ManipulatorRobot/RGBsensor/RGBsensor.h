@@ -19,8 +19,7 @@ class RGBsensor {
       int Rval, int Gval, int Bval, byte pin, byte gammatable[256], Adafruit_TCS34725 tcs
     );
     void RGBsensinit(byte pin); //initialises the system
-    void getVals(int Rval, int Gval, int Bval); //return colour in RGB values
-    void getCol(int Rval, int Gval, int Bval); //return colour as string
+    void getCol(int Rval, int Gval, int Bval); //print colour
 };
 
 #endif
