@@ -1,1 +1,1 @@
-This part should be responsible for the claw to open and close as well as its initialisation.
+This part should be responsible for the claw to initialise, open and close.
