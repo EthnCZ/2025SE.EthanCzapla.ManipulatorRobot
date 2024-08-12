@@ -1,1 +1,0 @@
-This part should contain the RGB sensor and the rangefinder.

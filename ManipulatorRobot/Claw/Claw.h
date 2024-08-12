@@ -5,6 +5,7 @@
 
 class Claw {
   private:
+    int pin
     int degree;
   public:
     Claw();
