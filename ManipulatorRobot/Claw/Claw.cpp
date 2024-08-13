@@ -1,11 +1,15 @@
 #include "Claw.h"
+#include "Servo.h"
 
-Claw::Claw(int degree) {
+Claw aClaw;
+
+Claw::Claw(int pin, int degree) {
+  this->pin = pin
   this->degree = degree;
 }
 
 void Claw::initC(int degree) {
-  Servo.attach(9);
+  Servo.attach(11);
   degree = 180;
 }
 

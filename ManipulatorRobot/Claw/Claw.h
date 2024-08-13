@@ -1,15 +1,16 @@
 #ifndef CLAW_H
 #define CLAW_H
 
-#include <Servo.h>
+#include <Arduino.h>
+#include <Wire.h>
 
 class Claw {
   private:
     int pin
-    int degree;
   public:
+    int degree;
     Claw();
-    Claw(int degree);
+    Claw(int pin, int degree);
     void initC(int pin);
     void openC(int degree);
     void closeC();
