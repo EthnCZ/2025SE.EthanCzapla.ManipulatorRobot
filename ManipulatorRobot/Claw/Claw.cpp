@@ -1,24 +1,22 @@
 #include "Claw.h"
 #include "Servo.h"
 
-Claw aClaw;
+Servo aServo;
 
-Claw::Claw(int pin, int degree) {
-  this->pin = pin
-  this->degree = degree;
+Claw::Claw(int pin){
+  this->pin = pin;
 }
 
-void Claw::initC(int degree) {
-  Servo.attach(11);
-  degree = 180;
+void Claw::initC() {
+  aServo.attach(pin);
 }
 
-void Claw::closeC(int degree) {
-  Servo.write(degree);
-  delay(250);
+void Claw::closeC() {
+  aServo.write(165);
+  delay(500);
 }
 
 void Claw::openC() {
-  Servo.write(0);
-  delay(250);
+  aServo.write(125);
+  delay(500);
 }

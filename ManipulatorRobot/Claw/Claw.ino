@@ -1,12 +1,14 @@
 #include "Claw.h"
 
-Claw claw;
+int pin = 11;
+Claw aClaw(pin);
 
 void setup() {
-  claw.initC();
+  Serial.begin(9600);
+  aClaw.initC();
 }
 
 void loop() {
-  claw.closeC();
-  claw.openC();
+  aClaw.closeC();
+  aClaw.openC();
 }
