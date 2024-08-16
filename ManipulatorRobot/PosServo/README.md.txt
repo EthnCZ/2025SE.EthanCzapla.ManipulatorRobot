@@ -1,1 +1,0 @@
-This part should act as the basis of the claw, base and elbows of the manipulator robot for servo.h library.

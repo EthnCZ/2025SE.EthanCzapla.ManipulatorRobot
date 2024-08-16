@@ -1,7 +1,7 @@
 #include "base.h"
 
-int pin = 5;
-Base aBase(pin);
+#define PBase 5
+Base aBase(PBase);
 
 void setup() {
   Serial.begin(9600);

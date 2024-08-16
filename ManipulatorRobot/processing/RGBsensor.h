@@ -10,14 +10,15 @@ class RGBsensor {
     int Rval;
     int Gval;
     int Bval;
+    byte pin;
     byte gammatable[256];
     Adafruit_TCS34725 tcs;
   public:
     RGBsensor () {} //do not use
     RGBsensor (
-      int Rval, int Gval, int Bval, byte gammatable[256], Adafruit_TCS34725 tcs
+      int Rval, int Gval, int Bval, byte pin, byte gammatable[256], Adafruit_TCS34725 tcs
     );
-    void RGBsensinit(); //initialises the system
+    void RGBsensinit(byte pin); //initialises the system
     void getCol(int Rval, int Gval, int Bval); //print colour
 };
 

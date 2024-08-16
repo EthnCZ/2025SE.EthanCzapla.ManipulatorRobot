@@ -1,16 +1,18 @@
 #include "RGBsensor.h"
 
-RGBsensor::RGBsensor (int Rval, int Gval, int Bval, byte gammatable[256], Adafruit_TCS34725 tcs) {
+RGBsensor::RGBsensor (int Rval, int Gval, int Bval, byte pin, byte gammatable[256], Adafruit_TCS34725 tcs) {
   //input data
   this->Rval = Rval;
   this->Gval = Gval;
   this->Bval = Bval;
+  this->pin = pin;
   this->gammatable[256] = gammatable[256];
   tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_50MS, TCS34725_GAIN_4X);
 }
 
 
-void RGBsensor::RGBsensinit() {
+void RGBsensor::RGBsensinit(byte pin) {
+  pinMode(pin, INPUT);
   if (tcs.begin()) {
     Serial.println("Found sensor");
   } else {

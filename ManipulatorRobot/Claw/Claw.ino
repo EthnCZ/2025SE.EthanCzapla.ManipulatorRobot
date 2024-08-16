@@ -1,7 +1,7 @@
 #include "Claw.h"
 
-int pin = 11;
-Claw aClaw(pin);
+#define Pclaw 11
+Claw aClaw(Pclaw);
 
 void setup() {
   Serial.begin(9600);
