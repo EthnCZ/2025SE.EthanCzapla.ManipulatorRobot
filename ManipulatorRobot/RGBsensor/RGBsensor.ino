@@ -1,14 +1,14 @@
 #include <Wire.h>
 #include "RGBsensor.h"
 
-RGBsensor Bob;
+RGBsensor RGBreader;
 
 void setup() {
   Serial.begin(9600);
-  Bob.RGBsensinit();
+  RGBreader.RGBsensinit();
 }
 
 
 void loop() {
-  Bob.getCol();
+  RGBreader.getCol();
 }
