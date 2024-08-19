@@ -7,13 +7,14 @@
 #include "base.h"
 #include "RGBsensor.h"
 
-class CPU {
+class CPB {
   private:
-  int bob
+  int bob //place holder for data
+  unsigned long placedelay;
   public:
-  CPU () {}
-  CPU (int bob)
-  void initCPU();
+  CPB () {}
+  CPB (int bob)
+  void initCPB();
   void getBlock();
   void placeBlock();
 }

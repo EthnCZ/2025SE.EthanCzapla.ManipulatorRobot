@@ -23,18 +23,21 @@ void RGBsensor::RGBsensinit() {
   }
 }
 
-void RGBsensor::getCol() {
+void RGBsensor::getCol(int state) { //does not return state
   float red, green, blue;
   delay(60);  // takes 50ms to read
   tcs.getRGB(&red, &green, &blue);
+  if (int(red) > 100 && int(green) > 100 && int(blue) > 100) {
+    state = 3; //nothing colour
+  }
   if (int(blue) > int(red) && int(blue) > int(green)) {
-    Serial.print("Blue");
+    state = 2; //blue colour
   }
   if (int(green) > int(red) && int(green) && int(blue)) {
-    Serial.print("Green");
+    state = 1; //green colour
   }
   if (int(red) > int(blue) && int(red) > int(green)) {
-    Serial.print("Red");
+    state = 0; //red colour
   }
 }
 

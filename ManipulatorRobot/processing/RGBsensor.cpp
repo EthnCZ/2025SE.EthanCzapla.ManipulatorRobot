@@ -1,18 +1,13 @@
 #include "RGBsensor.h"
 
-RGBsensor::RGBsensor (int Rval, int Gval, int Bval, byte pin, byte gammatable[256], Adafruit_TCS34725 tcs) {
-  //input data
-  this->Rval = Rval;
-  this->Gval = Gval;
-  this->Bval = Bval;
-  this->pin = pin;
+RGBsensor::RGBsensor (byte gammatable[256], Adafruit_TCS34725 tcs) {
+  //data
   this->gammatable[256] = gammatable[256];
   tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_50MS, TCS34725_GAIN_4X);
 }
 
 
-void RGBsensor::RGBsensinit(byte pin) {
-  pinMode(pin, INPUT);
+void RGBsensor::RGBsensinit() {
   if (tcs.begin()) {
     Serial.println("Found sensor");
   } else {
@@ -28,20 +23,17 @@ void RGBsensor::RGBsensinit(byte pin) {
   }
 }
 
-void RGBsensor::getCol(int Rval, int Gval, int Bval) {
+void RGBsensor::getCol() {
   float red, green, blue;
   delay(60);  // takes 50ms to read
   tcs.getRGB(&red, &green, &blue);
-  Rval = int(red); 
-  Gval = int(green); 
-  Bval = int(blue);
-  if (Bval > Rval && Bval > Gval) {
+  if (int(blue) > int(red) && int(blue) > int(green)) {
     Serial.print("Blue");
   }
-  if (Gval > Rval && Gval > Bval) {
+  if (int(green) > int(red) && int(green) && int(blue)) {
     Serial.print("Green");
   }
-  if (Rval > Gval && Rval > Bval) {
+  if (int(red) > int(blue) && int(red) > int(green)) {
     Serial.print("Red");
   }
 }
