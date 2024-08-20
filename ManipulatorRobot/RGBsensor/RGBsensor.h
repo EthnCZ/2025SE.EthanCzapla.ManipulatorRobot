@@ -16,7 +16,7 @@ class RGBsensor {
       byte gammatable[256], Adafruit_TCS34725 tcs
     );
     void RGBsensinit(); //initialises the system
-    void getCol(int state); //returns state corresponding to colours 0-red, 1-green, 2-blue, 3-none
+    byte getCol(); //returns state corresponding to colours 0-red, 1-green, 2-blue, 3-none
 };
 
 #endif
