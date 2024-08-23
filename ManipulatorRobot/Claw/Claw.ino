@@ -1,6 +1,6 @@
 #include "Claw.h"
 
-#define Pclaw 11
+#define Pclaw 3
 Claw aClaw(Pclaw);
 
 void setup() {
@@ -10,5 +10,6 @@ void setup() {
 
 void loop() {
   aClaw.closeC();
+  delay(1000);
   aClaw.openC();
 }

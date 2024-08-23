@@ -23,22 +23,23 @@ void RGBsensor::RGBsensinit() {
   }
 }
 
-byte RGBsensor::getCol() { //does not return state
-  float red, green, blue;
+int RGBsensor::getCol() { //does not return state
+  float r, g, b;
   delay(60);  // takes 50ms to read
-  tcs.getRGB(&red, &green, &blue);
-  if (int(red) < 100 && int(green) < 100 && int(blue) < 100) {
+  tcs.getRGB(&r, &g, &b);
+  if (int(r) < 100 && int(g) < 100 && int(b) < 100) {
     return 3; //nothing
   }
-  if (int(blue) > int(red) && int(blue) > int(green)) {
+  else if (int(b) > int(r) && int(b) > int(g)) {
     return 2; //blue colour
   }
-  if (int(green) > int(red) && int(green) && int(blue)) {
+  else if (int(g) > int(r) && int(g) > int(b)) {
     return 1; //green colour
   }
-  if (int(red) > int(blue) && int(red) > int(green)) {
+  else if (int(r) > int(b) && int(r) > int(g)) {
     return 0; //red colour
   }
+  delay(440); //read every 500ms
 }
 
 

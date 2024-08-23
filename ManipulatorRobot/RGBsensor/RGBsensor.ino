@@ -10,17 +10,17 @@ void setup() {
 
 
 void loop() {
-  switch(RGBreader.getCol()) {
-    case(3):
-      break;
-    case(2):
-      Serial.println("Blue");
-      break;
-    case(1):
-      Serial.println("Green");
-      break;
-    case(0):
-      Serial.println("Red");
-      break;
+  int i = RGBreader.getCol();
+  if (i == 3) {
+    //nothing
+  }
+  if (i == 0) {
+    Serial.println("Red");
+  }
+  if (i == 1) {
+    Serial.println("Green");
+  }
+  if (i == 2) {
+    Serial.println("Blue");
   }
 }
